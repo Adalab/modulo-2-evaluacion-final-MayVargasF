@@ -8,6 +8,26 @@
     <title>Buscador de series anime</title>
   </head>
   <body>
+    <header>
+      <h1>Buscador de series de anime</h1>
+    </header>
+    <main>
+      <form action="">
+        <input type="text" name="anime" id="anime" placeholder="Ej. Utena" />
+        <input type="submit" name="search" id="search" value="Buscar" />
+        <input type="submit" name="reset" id="reset" value="Reset" />
+      </form>
+
+      <section>
+        <h2>Resultado de búsqueda</h2>
+        <ul class="js_list_anime">
+          <li>
+            <h1>Nombre del anime</h1>
+            <div>Portada anime</div>
+          </li>
+        </ul>
+      </section>
+    </main>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
