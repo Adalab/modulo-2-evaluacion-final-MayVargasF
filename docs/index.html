@@ -13,10 +13,28 @@
     </header>
     <main>
       <form action="">
-        <input type="text" name="anime" id="anime" placeholder="Ej. Utena" />
-        <input type="submit" name="search" id="search" value="Buscar" />
+        <input
+          type="text"
+          name="anime"
+          id="anime"
+          class="js_searchInput"
+          placeholder="Ej. Utena"
+          required
+        />
+        <input
+          type="submit"
+          name="search"
+          id="search"
+          class="js_searchBtn"
+          value="Buscar"
+        />
         <input type="submit" name="reset" id="reset" value="Reset" />
       </form>
+
+      <section>
+        <h2>Mis favoritos</h2>
+        <ul class="favList js_fav_list"></ul>
+      </section>
 
       <section>
         <h2>Resultado de búsqueda</h2>

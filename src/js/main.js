@@ -14,7 +14,7 @@ function favStorage() {
   if (dataLocalStorage) {
     favList.innerHTML = html;
   } else {
-    favList.innerHTML ='',
+    favList.innerHTML = "";
   }
 }
 
@@ -46,7 +46,7 @@ function handleClickAnime(event) {
     favorites.splice(favoriteFound, 1);
   }
 
-  localStorage.setItem('favData',JSON.stringify(favorites));
+  localStorage.setItem("favData", JSON.stringify(favorites));
 
   renderAnimes(animes);
 }
