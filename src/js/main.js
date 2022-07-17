@@ -1,9 +1,23 @@
 "use strict";
 
 const listAnime = document.querySelector(".js_list_anime");
+const searchBtn = document.querySelector(".js_searchBtn");
+const searchInput = document.querySelector(".js_searchInput");
 
 let animes = [];
 let favorites = [];
+
+const handleClickSearch = (ev) => {
+  ev.preventDefault();
+  const inputValue = searchInput.value.toLowerCase();
+  const animeFilter = animes.filter((anime) =>
+    anime.title.toLowerCase().includes(inputValue)
+  );
+  console.log(animeFilter);
+  renderAnimes(animeFilter);
+};
+
+searchBtn.addEventListener("click", handleClickSearch);
 
 function handleClickAnime(event) {
   const idSelected = event.currentTarget.id;
@@ -25,7 +39,7 @@ function handleClickAnime(event) {
 
   console.log(favorites);
 
-  renderAnimes();
+  renderAnimes(animes);
 }
 
 function listenerAnimes() {
@@ -36,11 +50,11 @@ function listenerAnimes() {
   }
 }
 
-function renderAnimes() {
+function renderAnimes(arrayAnimes) {
   let html = "";
   let classFavorite = "";
 
-  for (const eachAnime of animes) {
+  for (const eachAnime of arrayAnimes) {
     const favoriteFoundIndex = favorites.findIndex(
       (fav) => eachAnime.mal_id === fav.mal_id
     );
@@ -81,7 +95,7 @@ function getDataApi() {
     .then((info) => {
       animes = info.data;
       console.log(animes);
-      renderAnimes();
+      renderAnimes(animes);
     });
 }
 
