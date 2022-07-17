@@ -24,6 +24,8 @@ function handleClickAnime(event) {
   console.log(animeFound);
 
   console.log(favorites);
+
+  renderAnimes();
 }
 
 function listenerAnimes() {
@@ -36,9 +38,20 @@ function listenerAnimes() {
 
 function renderAnimes() {
   let html = "";
+  let classFavorite = "";
 
   for (const eachAnime of animes) {
-    html += `<li class="js_eachAnime" id="${eachAnime.mal_id}">`;
+    const favoriteFoundIndex = favorites.findIndex(
+      (fav) => eachAnime.mal_id === fav.mal_id
+    );
+
+    if (favoriteFoundIndex !== -1) {
+      classFavorite = "animeList--favorite";
+    } else {
+      classFavorite = "";
+    }
+
+    html += `<li class="js_eachAnime ${classFavorite}" id="${eachAnime.mal_id}">`;
     html += `<div class="animeContainer">`;
     html += `<h3>${eachAnime.title}</h3>`;
     html += `<img src=${imagePlaceholder(eachAnime)} alt="${
