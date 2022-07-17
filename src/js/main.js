@@ -5,11 +5,32 @@ const listAnime = document.querySelector(".js_list_anime");
 let animes = [];
 let favorites = [];
 
+function handleClickAnime(event) {
+  const idSelected = event.currentTarget.id;
+  const animeFound = animes.find(
+    (anime) => anime.mal_id.toString() === idSelected.toString()
+  );
+
+  const favoriteFound = favorites.findIndex(
+    (fav) => fav.mal_id.toString() === idSelected.toString()
+  );
+
+  if (favoriteFound === -1) {
+    favorites.push(animeFound);
+  } else {
+    favorites.splice(favoriteFound, 1);
+  }
+
+  console.log(animeFound);
+
+  console.log(favorites);
+}
+
 function listenerAnimes() {
   const liAnimes = document.querySelectorAll(".js_eachAnime");
 
   for (const li of liAnimes) {
-    li.addEventListener("click", () => console.log(`He clicado el anime`));
+    li.addEventListener("click", handleClickAnime);
   }
 }
 
@@ -17,7 +38,7 @@ function renderAnimes() {
   let html = "";
 
   for (const eachAnime of animes) {
-    html += `<li class="js_eachAnime">`;
+    html += `<li class="js_eachAnime" id="${eachAnime.mal_id}">`;
     html += `<div class="animeContainer">`;
     html += `<h3>${eachAnime.title}</h3>`;
     html += `<img src=${imagePlaceholder(eachAnime)} alt="${
