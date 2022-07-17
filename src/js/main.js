@@ -3,9 +3,20 @@
 const listAnime = document.querySelector(".js_list_anime");
 const searchBtn = document.querySelector(".js_searchBtn");
 const searchInput = document.querySelector(".js_searchInput");
+const favList = document.querySelector(".js_fav_list");
 
 let animes = [];
 let favorites = [];
+
+function favStorage() {
+  const dataLocalStorage = JSON.parse(localStorage.getItem("favData"));
+
+  if (dataLocalStorage) {
+    favList.innerHTML = html;
+  } else {
+    favList.innerHTML ='',
+  }
+}
 
 const handleClickSearch = (ev) => {
   ev.preventDefault();
@@ -35,9 +46,7 @@ function handleClickAnime(event) {
     favorites.splice(favoriteFound, 1);
   }
 
-  console.log(animeFound);
-
-  console.log(favorites);
+  localStorage.setItem('favData',JSON.stringify(favorites));
 
   renderAnimes(animes);
 }
