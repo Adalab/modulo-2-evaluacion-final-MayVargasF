@@ -1,0 +1,31 @@
+.form {
+  text-align: center;
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  &__input {
+    border: 3px solid $color-titles;
+    border-radius: 5px;
+    background-color: black;
+    width: 350px;
+    height: 35px;
+    font-size: 20px;
+    box-sizing: border-box;
+    color: $color-white;
+  }
+
+  &__search,
+  &__reset {
+    background-color: $color-titles;
+    border-radius: 5px;
+    height: 35px;
+    width: 120px;
+    box-sizing: border-box;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: 15px;
+  }
+}

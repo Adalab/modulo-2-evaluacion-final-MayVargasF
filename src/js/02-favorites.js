@@ -1,6 +1,7 @@
 "use strict";
 
 const favList = document.querySelector(".js_fav_list");
+const deleteFav = document.querySelector(".js-deleteFav");
 
 let favorites = [];
 
