@@ -29,6 +29,9 @@ function renderAnimes(arrayAnimes, place) {
     html += `<li class="js_eachAnime ${classFavorite}" id="${eachAnime.mal_id}">`;
     html += `<div class="anime-container">`;
     html += `<h3>${eachAnime.title}</h3>`;
+    if (place.classList.contains("js_fav_list")) {
+      html += `<i>x</i>`;
+    }
     html += `<img src=${imagePlaceholder(eachAnime)} alt="${
       eachAnime.title
     } cover"/>`;
