@@ -31,6 +31,7 @@ function handleClickDelete() {
   localStorage.removeItem("favData");
   favorites = [];
   renderAnimes(favorites, favList);
+  renderAnimes(animes, listAnime);
 }
 
 deleteFav.addEventListener("click", handleClickDelete);

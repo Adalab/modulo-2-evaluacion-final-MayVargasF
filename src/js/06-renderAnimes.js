@@ -1,5 +1,17 @@
 "use strict";
 
+const listAnime = document.querySelector(".js_list_anime");
+
+let animes = [];
+
+// function listenerFavorites() {
+//   const removeFav = document.querySelectorAll(".js_remove");
+
+//   for (const li of removeFav) {
+//     li.addEventListener("click", handleClickRemoveSelected);
+//   }
+// }
+
 function listenerAnimes() {
   const liAnimes = document.querySelectorAll(".js_eachAnime");
 
@@ -28,15 +40,16 @@ function renderAnimes(arrayAnimes, place) {
 
     html += `<li class="js_eachAnime ${classFavorite}" id="${eachAnime.mal_id}">`;
     html += `<div class="anime-container">`;
-    html += `<h3>${eachAnime.title}</h3>`;
+    html += `<div class="removecont"><h3>${eachAnime.title}</h3>`;
     if (place.classList.contains("js_fav_list")) {
-      html += `<i>x</i>`;
+      html += `<i class="fa-solid fa-circle-xmark js_remove"></i>`;
     }
-    html += `<img src=${imagePlaceholder(eachAnime)} alt="${
+    html += `</div><img src=${imagePlaceholder(eachAnime)} alt="${
       eachAnime.title
     } cover"/>`;
     html += `</div></li>`;
   }
   place.innerHTML = html;
+  //listenerFavorites();
   listenerAnimes();
 }

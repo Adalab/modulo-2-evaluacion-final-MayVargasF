@@ -1,5 +1,7 @@
 "use strict";
 
+let pagination = {};
+
 const previousBtn = document.querySelector(".js_previousBtn");
 const nextBtn = document.querySelector(".js_nextBtn");
 
