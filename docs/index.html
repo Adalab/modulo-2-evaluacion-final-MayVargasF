@@ -9,15 +9,15 @@
   </head>
   <body>
     <header>
-      <h1>Buscador de series de anime</h1>
+      <h1 class="page-title">Buscador de series de anime</h1>
     </header>
     <main>
-      <form action="">
+      <form class="form" action="">
         <input
           type="text"
           name="anime"
           id="anime"
-          class="js_searchInput"
+          class="js_searchInput form__input"
           placeholder="Ej. Utena"
           required
         />
@@ -25,27 +25,38 @@
           type="submit"
           name="search"
           id="search"
-          class="js_searchBtn"
+          class="js_searchBtn form__search"
           value="Buscar"
         />
         <input
           type="submit"
           name="reset"
           id="reset"
-          class="js_resetBtn"
+          class="js_resetBtn form__reset"
           value="Reset"
         />
       </form>
 
-      <section>
-        <h2>Mis favoritos</h2>
-        <ul class="favList js_fav_list"></ul>
-      </section>
+      <div class="container">
+        <section class="container__favorites">
+          <h2 class="container__favorites--title">Series favoritas</h2>
+          <ul class="container__favorites--list js_fav_list"></ul>
+          <div class="container__favorites--delete">
+            <button class="js-deleteFav">Borrar todos</button>
+          </div>
+        </section>
 
-      <section>
-        <h2>Resultado de búsqueda</h2>
-        <ul class="animeList js_list_anime"></ul>
-      </section>
+        <section class="container__results">
+          <h2 class="container__results--title">Resultados</h2>
+          <ul class="container__results--list js_list_anime"></ul>
+          <div class="page-container">
+            <button class="js_previousBtn page-container__previous">
+              Anterior
+            </button>
+            <button class="js_nextBtn page-container__next">Siguiente</button>
+          </div>
+        </section>
+      </div>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>
