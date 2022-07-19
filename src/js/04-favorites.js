@@ -23,15 +23,26 @@ function handleClickFav(event) {
 
   localStorage.setItem("favData", JSON.stringify(favorites));
 
-  renderAnimes(favorites, favList);
-  renderAnimes(animes, listAnime);
+  render();
 }
 
 function handleClickDelete() {
   localStorage.removeItem("favData");
   favorites = [];
-  renderAnimes(favorites, favList);
-  renderAnimes(animes, listAnime);
+  render();
 }
 
 deleteFav.addEventListener("click", handleClickDelete);
+
+function handleClickRemoveSelected(event) {
+  const idSelected =
+    event.srcElement.parentElement.parentElement.parentElement.id;
+
+  const favoriteFound = favorites.findIndex(
+    (fav) => fav.mal_id.toString() === idSelected.toString()
+  );
+
+  favorites.splice(favoriteFound, 1);
+
+  render();
+}
