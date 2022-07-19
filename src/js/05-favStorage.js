@@ -9,6 +9,8 @@ function favStorage() {
   } else {
     favList.innerHTML = "";
   }
+
+  favInfo();
 }
 
 favStorage();

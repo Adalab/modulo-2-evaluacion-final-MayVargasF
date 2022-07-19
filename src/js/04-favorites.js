@@ -2,6 +2,7 @@
 
 const favList = document.querySelector(".js_fav_list");
 const deleteFav = document.querySelector(".js-deleteFav");
+const favMsg = document.querySelector(".js_noFavorites");
 
 let favorites = [];
 
@@ -24,12 +25,14 @@ function handleClickFav(event) {
   localStorage.setItem("favData", JSON.stringify(favorites));
 
   render();
+  favInfo();
 }
 
 function handleClickDelete() {
   localStorage.removeItem("favData");
   favorites = [];
   render();
+  favInfo();
 }
 
 deleteFav.addEventListener("click", handleClickDelete);
@@ -45,4 +48,13 @@ function handleClickRemoveSelected(event) {
   favorites.splice(favoriteFound, 1);
 
   render();
+  favInfo();
+}
+
+function favInfo() {
+  if (favorites.length === 0) {
+    favMsg.innerHTML = `Todavía no tienes ninguna serie favorita. Haz click sobre tus series favoritas para empezar a guardarlas.`;
+  } else {
+    favMsg.innerHTML = "";
+  }
 }
