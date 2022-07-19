@@ -66,6 +66,8 @@ function renderAnimes(arrayAnimes, place) {
   listenerAnimes();
 }
 
+//para cuando hago cambios y necesito repintar los html
+
 function render() {
   renderAnimes(favorites, favList);
   renderAnimes(animes, listAnime);
