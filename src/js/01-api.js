@@ -14,6 +14,8 @@ function getDataApi(search = "", page = 1) {
       }
 
       renderAnimes(animes, listAnime);
+
+      pageInfo();
     });
 }
 

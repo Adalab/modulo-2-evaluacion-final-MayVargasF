@@ -8,6 +8,7 @@ const handleClickSearch = (ev) => {
   ev.preventDefault();
   const inputValue = searchInput.value.toLowerCase();
   getDataApi(inputValue);
+  pageInfo();
 };
 
 searchBtn.addEventListener("click", handleClickSearch);

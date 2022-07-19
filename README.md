@@ -22,6 +22,8 @@
 
 4. Las series favoritas se quedarán almacenadas en el la memoria del navegador de la usuaria de manera que aunque recargue la página o vuelva a entrar en ella más tarde, seguirá teniendo sus series favoritas guardadas en su correspondiente sección.
 
+5. Las series que son muy antiguas no tienen imagen de portada por lo que se le ha colocado un placeholder que aparecerá en su lugar de modo que la imagen no quede vacía.
+
 
 ### API externa utilizada para obtener la información de las series de anime
 
