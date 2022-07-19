@@ -46,6 +46,8 @@ function handleClickRemoveSelected(event) {
   );
 
   favorites.splice(favoriteFound, 1);
+  let newFavorites = JSON.stringify(favorites);
+  localStorage.setItem("favData", newFavorites);
 
   render();
   favInfo();
